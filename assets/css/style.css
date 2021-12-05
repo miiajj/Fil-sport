@@ -1,0 +1,137 @@
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.app-header {
+    background-color: #fff;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.header-ctn {
+    height: 64px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-ctn__logo {
+
+}
+
+.header-ctn__logo-link {
+}
+
+.header-ctn__logo-img {
+    height: 168px;
+    width: auto;
+}
+
+.header-ctn__navbar {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+
+}
+
+.navbar-list {
+    margin: 0 56px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar__item {
+    padding: 4px 0;
+    display: flex;
+    border: 1px solid transparent;
+    transition: border 0.4s ease;
+}
+
+.navbar__item:hover {
+    border-bottom: 1px solid #333;
+}
+
+.header-ctn__tmp {
+    width: 120px;
+}
+
+/* Main */
+
+.app-main {
+    /* background-color: rgb(237,28,36); */
+    height: 1000px;
+}
+
+.main-ctn {
+
+}
+
+.main-ctn__banner {
+    margin: 100px;
+    height: 450px;
+    background-color: rgb(147,8,5);
+}
+
+.banner-sliders {
+    display: none;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: fadeIn 1s alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.banner-sliders__caption h2 {
+    font-size: 2.4rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    text-align: center;
+    line-height: 4rem;
+}
+
+.main-ctn__intro {
+
+}
+
+.main-ctn__product-list {
+
+}
+
+/* Footer */
+
+.app-footer {
+    
+}
