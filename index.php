@@ -29,7 +29,7 @@
                             <li class="navbar__item"><a href="#home">Trang chủ</a></li>
                             <li class="navbar__item"><a href="#intro">Giới thiệu</a></li>
                             <li class="navbar__item"><a href="#products">Sản phẩm</a></li>
-                            <li class="navbar__item"><a href="">Liên hệ</a></li>
+                            <li class="navbar__item"><a href="#footer">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div class="header-ctn__tmp"></div>
@@ -71,14 +71,6 @@
                             ?>
 
                             <?php foreach ($ket_qua as $mot_san_pham){ ?>
-                              <!--   <tr>
-                                    <td><?php echo $mot_san_pham['ma_hang'] ?></td>
-                                    <td><?php echo $mot_san_pham['ten_hang'] ?></td>
-                                    <td><?php echo $mot_san_pham['don_gia'] ?></td>
-                                    <td><?php echo $mot_san_pham['mo_ta'] ?></td>
-                                    <td><?php echo $mot_san_pham['link_anh'] ?></td>
-                                </tr> -->
-
                                 <div class="product-item">
                                 <div class="product-item__img" style="background-image: url(<?php echo $mot_san_pham['link_anh'] ?>);"></div>
                                 <div class="product-item__info">
@@ -86,88 +78,40 @@
                                     <div class="product-item__price"><?php echo $mot_san_pham['don_gia'] ?> &#8363;</div>
                                     <div class="product-item__desc"><?php echo $mot_san_pham['mo_ta'] ?></div>
                                 </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
+                                <button class="product-item__btn-order"><a href="">Đặt hàng</a></button>
                             </div>
                             <?php } ?>
- <!--                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/ao-viet-nam-do.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo bóng đá Việt Nam</div>
-                                    <div class="product-item__price">119.000đ</div>
-                                    <div class="product-item__desc">Màu đỏ, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
+                        </div>
+                        <div class="product-cart">
+                            <h2 class="product-cart__heading">Giỏ hàng</h2>
+                            <div class="product-cart__list">
+                                <div class="product-cart__item-heading">
+                                    <span>Sản phẩm</span>
+                                    <span>Đơn giá</span>
+                                    <span>Mô tả</span>
+                                    <span>Số lượng</span>
                                 </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
+                                <div class="product-cart__item">
+                                    <div class="cart-item__name">
+                                        <img class="thumbnail" src="">
+                                        <span>hello</span>
+                                    </div>
+                                    <div class="cart-item__price">2.3đ</div>
+                                    <div class="cart-item__desc">abcxyz</div>
+                                    <div class="cart-item__quantity">2</div>
+                                </div>
+                                <div class="product-cart__total">
+                                    <div class="cart-total__heading">Tổng cộng</div>
+                                    <div class="cart-total__price">123.151 đ</div>
+                                </div>
                             </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/aothethao.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo thể thao nam Kelme</div>
-                                    <div class="product-item__price">150.000đ</div>
-                                    <div class="product-item__desc">Màu trắng, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/aothethaonu.jpg); background-size: cover;"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo thể thao nữ Kamito</div>
-                                    <div class="product-item__price">119.000đ</div>
-                                    <div class="product-item__desc">Màu đen và vàng, one size, vải cotton thoáng mát.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/bong.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo bóng đá Việt Nam</div>
-                                    <div class="product-item__price">119.000đ</div>
-                                    <div class="product-item__desc">Màu đỏ, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/quanvietnam.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo bóng đá Việt Nam</div>
-                                    <div class="product-item__price">119.000đ</div>
-                                    <div class="product-item__desc">Màu đỏ, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/quan-short-the-thao-trang.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Quần short gió thể thao nam Kamito</div>
-                                    <div class="product-item__price">225.000đ</div>
-                                    <div class="product-item__desc">Màu trắng, one size, vải cotton thoáng mát.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/quanthethao.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo bóng đá Việt Nam</div>
-                                    <div class="product-item__price">119.000đ</div>
-                                    <div class="product-item__desc">Màu đỏ, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(./assets/img/maychaybo.jpg);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name">Áo bóng đá Việt Nam</div>
-                                    <div class="product-item__price">119.000đ</div>
-                                    <div class="product-item__desc">Màu đỏ, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
-                                </div>
-                                <button class="product-item__btn-order">Đặt hàng</button>
-                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="app-footer">
+        <div id="footer" class="app-footer">
             <div class="container">
                 <div class="footer-ctn">
                     <div class="footer-ctn__info">

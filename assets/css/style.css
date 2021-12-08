@@ -263,6 +263,12 @@ span.fil {
     line-height: 2rem;
     height: 4rem;
     margin-bottom: 6px;
+
+/*    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;*/
 }
 
 .product-item__price {
@@ -282,11 +288,9 @@ span.fil {
 }
 
 .product-item__btn-order {
-    outline: none;
     border: 1px solid transparent;
     background-color: rgba(243,29,24,0.05);
     font-weight: 600;
-    color: rgb(255,4,0);
     margin: 4px 12px 12px;
     padding: 8px 20px;
     float: right;
@@ -295,10 +299,32 @@ span.fil {
     min-width: 120px;
 }
 
+.product-item__btn-order a {
+    color: rgb(255,4,0);
+}
+
 .product-item__btn-order:hover {
     border: 1px solid rgb(243,29,24);
     
 }
+
+.product-cart {
+    margin-top: 40px;
+    border: 1px solid #333;
+}
+
+.product-cart__heading {
+    font-size: 2.8rem;
+    color: #333;
+    text-align: center;
+    line-height: 3.2rem;
+    padding: 40px;
+}
+
+.product-cart__list {
+    margin: 32px 20px;
+}
+
 
 /* Footer */
 
@@ -313,8 +339,8 @@ span.fil {
     font-family: 'Roboto', serif;
     font-size: 1.3rem;
     color: #333;
-    padding: 20px 48px;
-    line-height: 2rem;
+    padding: 20px 48px 80px;
+    line-height: 2.4rem;
     display: flex;
     justify-content: space-between;
 }
@@ -367,6 +393,7 @@ a.social-insta:hover i {
 a.social-reddit:hover {
     color: #ff4500;
 }
+
 
 /* Response */
 
