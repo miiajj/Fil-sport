@@ -63,7 +63,33 @@
                     <div id="products" class="main-ctn__products">
                         <h2 class="products-heading">Danh sách sản phẩm</h2>
                         <div class="product-list">
-                            <div class="product-item">
+                            <?php 
+                                $ket_noi = mysqli_connect('localhost','root','','fil_sport');
+                                mysqli_set_charset($ket_noi,'utf8');
+                                $sql = "select * from mat_hang";
+                                $ket_qua = mysqli_query($ket_noi,$sql);
+                            ?>
+
+                            <?php foreach ($ket_qua as $mot_san_pham){ ?>
+                              <!--   <tr>
+                                    <td><?php echo $mot_san_pham['ma_hang'] ?></td>
+                                    <td><?php echo $mot_san_pham['ten_hang'] ?></td>
+                                    <td><?php echo $mot_san_pham['don_gia'] ?></td>
+                                    <td><?php echo $mot_san_pham['mo_ta'] ?></td>
+                                    <td><?php echo $mot_san_pham['link_anh'] ?></td>
+                                </tr> -->
+
+                                <div class="product-item">
+                                <div class="product-item__img" style="background-image: url(<?php echo $mot_san_pham['link_anh'] ?>);"></div>
+                                <div class="product-item__info">
+                                    <div class="product-item__name"><?php echo $mot_san_pham['ten_hang'] ?></div>
+                                    <div class="product-item__price"><?php echo $mot_san_pham['don_gia'] ?> &#8363;</div>
+                                    <div class="product-item__desc"><?php echo $mot_san_pham['mo_ta'] ?></div>
+                                </div>
+                                <button class="product-item__btn-order">Đặt hàng</button>
+                            </div>
+                            <?php } ?>
+ <!--                            <div class="product-item">
                                 <div class="product-item__img" style="background-image: url(./assets/img/ao-viet-nam-do.jpg);"></div>
                                 <div class="product-item__info">
                                     <div class="product-item__name">Áo bóng đá Việt Nam</div>
@@ -134,7 +160,7 @@
                                     <div class="product-item__desc">Màu đỏ, full size, vải cotton thoáng mát. Phù hợp cho mọi lứa tuổi.</div>
                                 </div>
                                 <button class="product-item__btn-order">Đặt hàng</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

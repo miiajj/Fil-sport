@@ -275,6 +275,10 @@ span.fil {
     line-height: 2rem;
     height: 4rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
 }
 
 .product-item__btn-order {
