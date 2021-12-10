@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/logo-shop.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Football is life</title>
 </head>
 <body>
@@ -61,6 +62,7 @@
                         </div>
                     </div>
                     <div id="products" class="main-ctn__products">
+                        <a id="to_cart" href="#cart">Giỏ hàng<br>&#8595;</a>
                         <h2 class="products-heading">Danh sách sản phẩm</h2>
                         <div class="product-list">
                             <?php 
@@ -78,31 +80,27 @@
                                     <div class="product-item__price"><?php echo $mot_san_pham['don_gia'] ?> &#8363;</div>
                                     <div class="product-item__desc"><?php echo $mot_san_pham['mo_ta'] ?></div>
                                 </div>
-                                <button class="product-item__btn-order"><a href="">Đặt hàng</a></button>
+                                <button class="product-item__btn-order">Thêm vào giỏ</button>
                             </div>
                             <?php } ?>
                         </div>
                         <div class="product-cart">
-                            <h2 class="product-cart__heading">Giỏ hàng</h2>
-                            <div class="product-cart__list">
-                                <div class="product-cart__item-heading">
+                            <a id="to_product" href="#products">&#8593;<br>Sản phẩm</a>
+                            <h2 class="product-cart__heading" id="cart">Giỏ hàng</h2>
+                            <div class="product-cart__ctn">
+                                <div class="product-cart__ctn-heading">
                                     <span>Sản phẩm</span>
                                     <span>Đơn giá</span>
                                     <span>Mô tả</span>
                                     <span>Số lượng</span>
                                 </div>
-                                <div class="product-cart__item">
-                                    <div class="cart-item__name">
-                                        <img class="thumbnail" src="">
-                                        <span>hello</span>
-                                    </div>
-                                    <div class="cart-item__price">2.3đ</div>
-                                    <div class="cart-item__desc">abcxyz</div>
-                                    <div class="cart-item__quantity">2</div>
-                                </div>
+
+                                <div class="product-cart__list"></div>
+
                                 <div class="product-cart__total">
                                     <div class="cart-total__heading">Tổng cộng</div>
-                                    <div class="cart-total__price">123.151 đ</div>
+                                    <div class="cart-total__price">0 &#8363;</div>
+                                    <a class="cart-total__payment" href="">Thanh toán</a>
                                 </div>
                             </div>
                         </div>
@@ -160,19 +158,140 @@
 
 
     <script>
+        // Banner animation
         var myIndex = 0;
         carousel();
 
         function carousel() {
-        var i;
-        var x = document.getElementsByClassName("banner-sliders");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+            var i;
+            var x = document.getElementsByClassName("banner-sliders");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 3000);
         }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 3000);
+
+        // Delete card_item
+        remove_cart_item();
+
+        function remove_cart_item() {
+            var remove_cart_item = document.getElementsByClassName("cart-item__del-btn");
+            for (var i = 0; i < remove_cart_item.length; i++) {
+                var btn = remove_cart_item[i];
+                btn.addEventListener("click", function () {
+                    var btn_remove = event.target;
+                    btn_remove.parentElement.parentElement.remove();
+                    update_cart();
+                })
+            }
+        }
+
+        // Total
+        update_cart();
+
+        function update_cart() {
+            var cart_list = document.getElementsByClassName("product-cart__ctn")[0];
+            var cart_items = cart_list.getElementsByClassName("product-cart__item");
+            var total = 0;
+            for (var i = 0; i < cart_items.length; i++) {
+                var price_item = parseFloat(cart_items[i].getElementsByClassName("cart-item__price")[0].innerHTML.replace(/[^0-9]/g,''));
+                var quantity_item = parseFloat(cart_items[i].getElementsByClassName("cart-quantity-input")[0].value);
+                total += price_item * quantity_item;
+            }
+            document.getElementsByClassName("cart-total__price")[0].innerHTML = total + ' &#8363;';
+
+            var total_payment_btn = cart_list.getElementsByClassName("cart-total__payment")[0];
+            if(total == 0) {
+                total_payment_btn.style.visibility = 'hidden';
+            } else {
+                total_payment_btn.style.visibility = 'visible';
+            }
+        }
+
+        // Change quantity
+        change_quantity();
+
+        function change_quantity() {
+            var quantity_inputs = document.getElementsByClassName("cart-quantity-input");
+            for (var i = 0; i < quantity_inputs.length; i++) {
+                var input = quantity_inputs[i];
+                input.addEventListener("change", function (event) {
+                    var input = event.target;
+                    if (isNaN(input.value) || input.value <= 0) {
+                        input.value = 1;
+                    }
+                update_cart();
+                })
+            }
+        }
+
+        // Thêm vào giỏ
+        add_to_cart();
+
+        function add_to_cart() {
+            var add_cart = document.getElementsByClassName("product-item__btn-order");
+            for (var i = 0; i < add_cart.length; i++) {
+                var add = add_cart[i];
+                add.addEventListener("click", function (event) {
+                    var btn = event.target;
+                    var product = btn.parentElement;
+                    var img_div = product.getElementsByClassName("product-item__img")[0];
+                    var url = $(img_div).css('background-image').replace('url(','').replace(')','').replace(/\"/gi, "");
+                    var title = product.getElementsByClassName("product-item__name")[0].innerHTML;
+                    var price = product.getElementsByClassName("product-item__price")[0].innerHTML;
+                    var desc = product.getElementsByClassName("product-item__desc")[0].innerHTML;
+                    addItemToCart(url, title, price, desc);
+                    update_cart();
+                })
+            }
+        }
+
+        function addItemToCart(url, title, price, desc) {
+            var cart_item = document.createElement('div');
+            cart_item.classList.add('product-cart__item');
+
+            var cart_list = document.getElementsByClassName('product-cart__list')[0];
+            var cart_title = cart_list.getElementsByClassName('cart-item-title');
+
+            //Nếu title của sản phẩm bằng với title mà bạn thêm vao giỏ hàng thì sẽ thông cho user.
+            for (var i = 0; i < cart_title.length; i++) {
+                if (cart_title[i].innerHTML == title) {
+                    alert('Sản Phẩm Đã Có Trong Giỏ Hàng');
+                    return;
+                }
+            }
+
+            var cart_item_content = `
+                        <div class="cart-item__info">
+                            <img class="cart-item-thumbnail" src="${url}">
+                            <span class="cart-item-title">${title}</span>
+                        </div>
+                        <div class="cart-item__price">${price}</div>
+                        <div class="cart-item__desc">${desc}</div>
+                        <div class="cart-item__quantity">
+                            <input class="cart-quantity-input" type="number" value="1" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            <button class="cart-item__del-btn" type="button">Xóa</button>
+                        </div>`
+
+            cart_item.innerHTML = cart_item_content;
+            cart_list.append(cart_item);
+            update_cart();
+
+            cart_item.getElementsByClassName('cart-item__del-btn')[0].addEventListener('click', function () {
+                var btn_remove = event.target;
+                btn_remove.parentElement.parentElement.remove();
+                update_cart();
+            })
+            cart_item.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
+                var input = event.target;
+                if (isNaN(input.value) || input.value <= 0) {
+                    input.value = 1;
+                }
+                update_cart();
+            })
         }
     </script>
 </body>
