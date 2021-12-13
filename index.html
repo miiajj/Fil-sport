@@ -65,7 +65,7 @@
                         <a id="to_cart" href="#cart">Giỏ hàng<br>&#8595;</a>
                         <h2 class="products-heading">Danh sách sản phẩm</h2>
                         <div class="product-list">
-                            <?php 
+<!--                             <?php 
                                 $ket_noi = mysqli_connect('localhost','root','','fil_sport');
                                 mysqli_set_charset($ket_noi,'utf8');
                                 $sql = "select * from mat_hang";
@@ -74,15 +74,158 @@
 
                             <?php foreach ($ket_qua as $mot_san_pham){ ?>
                                 <div class="product-item">
-                                <div class="product-item__img" style="background-image: url(<?php echo $mot_san_pham['link_anh'] ?>);"></div>
-                                <div class="product-item__info">
-                                    <div class="product-item__name"><?php echo $mot_san_pham['ten_hang'] ?></div>
-                                    <div class="product-item__price"><?php echo $mot_san_pham['don_gia'] ?> &#8363;</div>
-                                    <div class="product-item__desc"><?php echo $mot_san_pham['mo_ta'] ?></div>
+                                    <div class="product-item__img" style="background-image: url(<?php echo $mot_san_pham['link_anh'] ?>);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name"><?php echo $mot_san_pham['ten_hang'] ?></div>
+                                        <div class="product-item__price"><?php echo $mot_san_pham['don_gia'] ?> &#8363;</div>
+                                        <div class="product-item__desc"><?php echo $mot_san_pham['mo_ta'] ?></div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
                                 </div>
-                                <button class="product-item__btn-order">Thêm vào giỏ</button>
-                            </div>
-                            <?php } ?>
+                            <?php } ?> -->
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/ao-viet-nam-do.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Áo bóng đá Việt Nam</div>
+                                        <div class="product-item__price">119.000 ₫</div>
+                                        <div class="product-item__desc">Màu đỏ, vải cotton</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/aothethao.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Áo thể thao Kelme</div>
+                                        <div class="product-item__price">150.000 ₫</div>
+                                        <div class="product-item__desc">Full size, màu trắng, màu trắng, vải cotton, phom ôm người</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/aothethaonu.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Áo thể thao Kamito nữ</div>
+                                        <div class="product-item__price">149.000 ₫</div>
+                                        <div class="product-item__desc">Full size, màu xanh vàng, vải cotton thon gọn ôm dáng.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/balo-cau-long.png);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Balo cầu lông Kamito</div>
+                                        <div class="product-item__price">389.000 ₫</div>
+                                        <div class="product-item__desc">Màu đen đỏ, kiểu dáng thể thao năng động, chống nước.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/bong.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Bóng đá - Động Lực</div>
+                                        <div class="product-item__price">450.000 ₫</div>
+                                        <div class="product-item__desc">Size 5, UHV 2.16 được làm từ chất liệu da PU cao cấp, có độ bền cao, độ nảy
+                                            tốt</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/depthethao.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Dép Mizund</div>
+                                        <div class="product-item__price">189.000 ₫</div>
+                                        <div class="product-item__desc">Full size, màu trắng, nhẹ. Kiểu dáng hiện đại, chất liệu hợp chất cao su
+                                            siêu bền.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/giaythethao2.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Giày Đá Bóng Sân Cỏ Nhân Tạo Morelia Neo</div>
+                                        <div class="product-item__price">2.750.000 ₫</div>
+                                        <div class="product-item__desc">Full size da Kangaroo cao cấp (K-Leather). Cổ chun co giãn bền bỉ. Đệm giảm
+                                            chấn cao cấp ở gót chân.
+                                            Hệ thống đinh dăm chữ L.
+                                            Form giày phù hợp với bàn chân Việt.
+                                            Trọng lượng 250g</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/giaythethaokid.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Giày đá bóng bản kid Tuấn Anh TA11 KIDS </div>
+                                        <div class="product-item__price">449.000 ₫</div>
+                                        <div class="product-item__desc">Size: 33-37. Màu sắc hiện đại, bắt mắt do chính tuyển thủ Tuấn Anh tham gia
+                                            thiết kế, bé sẽ luôn nổi bật trên sân.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/maychaybo.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Máy chạy bộ L-791ADS</div>
+                                        <div class="product-item__price">10.189.000 ₫</div>
+                                        <div class="product-item__desc">(Liên hệ)</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/maychaybo2.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Máy chạy bộ Y-ET2514D</div>
+                                        <div class="product-item__price">12.449.000 ₫</div>
+                                        <div class="product-item__desc">(Liên hệ)</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/quanvietnam.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Quần bóng đá Việt Nam</div>
+                                        <div class="product-item__price">79.000 ₫</div>
+                                        <div class="product-item__desc">Màu đỏ, vải cotton</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/quanthethao.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Quần thể thao dài</div>
+                                        <div class="product-item__price">179.000 ₫</div>
+                                        <div class="product-item__desc">Full size, màu đen. Phù hợp cả nam và nữ.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/quan-short-the-thao-trang.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Quần Short thể thao nam Kamito SS5</div>
+                                        <div class="product-item__price">225.000 ₫</div>
+                                        <div class="product-item__desc">Full size, màu trắng, co dãn. Phom rộng thoải mái.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/quan-short-the-thao-xanh.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Quần Short thể thao nam Kamito SD1</div>
+                                        <div class="product-item__price">225.000 ₫</div>
+                                        <div class="product-item__desc">Full size, màu xanh than co dãn, ôm chân, gọn dáng bị vướng.</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-item__img" style="background-image: url(./assets/img/tatthethao.jpg);"></div>
+                                    <div class="product-item__info">
+                                        <div class="product-item__name">Tất cầu lông Kamito</div>
+                                        <div class="product-item__price">50.000 ₫</div>
+                                        <div class="product-item__desc">Full size, cổ lửng, màu trắng. Thấm hút tốt, luôn khô thoáng. Phom ôm sát
+                                            bàn chân cho cảm giác di chuyển tốt</div>
+                                    </div>
+                                    <button class="product-item__btn-order">Thêm vào giỏ</button>
+                                </div>
                         </div>
                         <div class="product-cart">
                             <a id="to_product" href="#products">&#8593;<br>Sản phẩm</a>
