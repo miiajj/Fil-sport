@@ -88,7 +88,7 @@ span.fil {
 /* Main */
 
 .app-main {
-     width: 100%;
+    width: 100%;
 }
 
 .main-ctn {
@@ -451,9 +451,9 @@ div.cart-item__desc {
 
 .cart-item__del-btn {
     position: absolute;
-    left: 100%;
+    left: calc(100% - 16px);
     top: 0;
-    padding: 4px 12px;
+    padding: 4px 8px;
     border: 1px solid transparent;
     font-size: 1.6rem;
     color: rgb(255,4,0);
