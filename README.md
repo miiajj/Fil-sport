@@ -4,4 +4,4 @@
 
 =>  https://miiajj.github.io/Fil-sport/
 
-Thanks for watched it!
+Thanks for watching it!
